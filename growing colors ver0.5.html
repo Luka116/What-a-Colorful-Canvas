@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Colorful World</title>
+    <title>Colorful World</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
@@ -48,7 +48,6 @@
 			left: 100px;
 			top:200px;
 		}
-
     </style>
 </head>
 <body>
@@ -95,9 +94,8 @@
 		let randomColors = false
 		let colorSpreadOption = "leaveEm"
 		
-		const canvas = document.getElementById("life")
-		
-		const canvasContext2D = document.getElementById("life").getContext('2d')
+		const canvas = document.getElementById("life");
+		const canvasContext2D = canvas.getContext('2d');
 		const drawRect = (x,y,c,s)=>{
 			canvasContext2D.fillStyle=c
 			canvasContext2D.fillRect(x,y,s,s)
@@ -110,6 +108,7 @@
 			canvasContext2D.stroke();
 		}
 		
+		
 		//checkboxes & options
 		document.getElementById('pauseOrGo').addEventListener('click', function() { pauseDontSim = this.checked; });
 		document.getElementById('randomColorToggle').addEventListener('click', function() { randomColors = this.checked; });
@@ -121,7 +120,6 @@
 		
 		document.getElementById("spreadChanceSlider").addEventListener("change", function(event){ spreadChance = event.target.value; });
 		document.getElementById("fallOffSlider").addEventListener("change", function(event){ fallOff = event.target.value; });
-		
 		
 		
 		//color thingies
@@ -248,18 +246,6 @@
 		}
 		drawRect(0, 0, "black", size);
 		update();
-		/* todo
-				add spread chance slider thingy
-				fall off slider
-			"% based" vs "± based" fall off toggle
-			negative fall off using math.ceilign?	toggle
-				min color
-					higher color spreads over smaller toggle
-					mixing thing? like avg of colors is taken toggle
-			brush?
-			undo (b r u h) *ded*
-			revive when ded klike store origin color that'll do toggle
-		*/
 	</script>
 </body>
 </html>
